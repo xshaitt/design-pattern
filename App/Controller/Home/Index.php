@@ -3,11 +3,12 @@
  * Created by PhpStorm.
  * User: xshaitt
  * Date: 2019/2/27
- * Time: 下午7:09
+ * Time: 下午7:16
  */
 
-namespace IMooc;
-class Object
+namespace App\Controller\Home;
+
+class Index
 {
     public static function test()
     {
