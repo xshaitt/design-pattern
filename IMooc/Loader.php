@@ -12,6 +12,7 @@ class Loader
 {
     public static function autoload($class)
     {
-
+        require BASEDIR . '/' . str_replace('\\', '/', $class) . '.php';
+        //拼接目录并引入
     }
 }
