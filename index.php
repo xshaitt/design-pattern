@@ -8,5 +8,10 @@ spl_autoload_register('\IMooc\Loader::autoload');
 //\App\Controller\Home\Index::test();
 //调用未包含的方法
 
-echo \IMooc\Factory::createDatabase();
+//echo \IMooc\Factory::createDatabase();
 //使用工厂模式创建类
+$reg = new \IMooc\Register();
+$reg->_set('db',\IMooc\Factory::createDatabase());
+//注册对象，通常这一步都是放在初始化的环节
+$db = \IMooc\Register::get('db');
+echo $db;
