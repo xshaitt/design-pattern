@@ -8,7 +8,8 @@
 
 namespace IMooc\Database;
 
-class MySQLi
+//TODO 就不具体的实现了，毕竟只是为了理解一下这种设计模式
+class MySQLi implements IDatabase
 {
     public function connect($host, $user, $password, $dbname)
     {
@@ -27,6 +28,6 @@ class MySQLi
 
     public function __toString()
     {
-        return '适配器模式下的类';
+        return '适配器模式下的MySQLi类';
     }
 }

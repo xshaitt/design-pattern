@@ -15,6 +15,6 @@ spl_autoload_register('\IMooc\Loader::autoload');
 //注册对象，通常这一步都是放在初始化的环节
 //$db = \IMooc\Register::get('db');
 //echo $db;
-echo 'xx';
-$xx =  new \IMooc\Database\MySQLi();
+$xx =  new \IMooc\Database\PDO();
 echo $xx;
+//因为有对应的适配器，所以对于使用者来讲切换非常方便，扩展起来也很方便

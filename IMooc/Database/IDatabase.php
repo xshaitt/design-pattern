@@ -6,7 +6,9 @@
  * Time: 下午5:50
  */
 
-interface Database
+namespace IMooc\Database;
+
+interface IDatabase
 {
     public function connect($host, $user, $password, $dbname);
 
