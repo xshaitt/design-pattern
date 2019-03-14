@@ -32,6 +32,7 @@ spl_autoload_register('\IMooc\Loader::autoload');
 //var_dump($users);
 //ORM对象数据映射
 $userModel = new \IMooc\Database\User(1);
-var_dump($userModel->name);
+$userModel->mobile = '17091642340';
+var_dump($userModel->save());
 
 

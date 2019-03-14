@@ -25,6 +25,12 @@ class MySQLii implements IDatabase
         return mysqli_fetch_assoc($obj);
     }
 
+    public function update($sql)
+    {
+        $result = mysqli_query($this->conn, $sql);
+        return $result;
+    }
+
     public function close()
     {
         // TODO: Implement close() method.

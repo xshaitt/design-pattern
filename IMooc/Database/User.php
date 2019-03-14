@@ -25,4 +25,11 @@ class User
         $this->mobile = $user['mobile'];
         $this->regtime = $user['regtime'];
     }
+
+    public function save()
+    {
+        $result = $this->db->update("update user set name='{$this->name}',mobile='{$this->mobile}'
+           where id = '{$this->id}'");
+        return $result;
+    }
 }
