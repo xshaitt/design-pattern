@@ -9,16 +9,20 @@
 namespace IMooc\Database;
 
 //TODO 就不具体的实现了，毕竟只是为了理解一下这种设计模式
-class MySQLi implements IDatabase
+class MySQLii implements IDatabase
 {
+    public $conn;
+
     public function connect($host, $user, $password, $dbname)
     {
-        // TODO: Implement connect() method.
+        $this->conn = mysqli_connect('172.19.0.1', 'default',
+            'secret', 'default');
     }
 
     public function query($sql)
     {
-        // TODO: Implement query() method.
+        $obj = mysqli_query($this->conn, $sql);
+        return mysqli_fetch_assoc($obj);
     }
 
     public function close()

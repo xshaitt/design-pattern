@@ -18,11 +18,20 @@ spl_autoload_register('\IMooc\Loader::autoload');
 //$xx =  new \IMooc\Database\PDO();
 //echo $xx;
 //因为有对应的适配器，所以对于使用者来讲切换非常方便，扩展起来也很方便
-$page = new \IMooc\UserStrategyPage();
-if (isset($_GET['strategy']) && $_GET['strategy'] == 'male') {
-    $page->setStrategy(new \IMooc\MaleUserStrategy());
-} else {
-    $page->setStrategy(new \IMooc\FemaleUserStrategy());
-}
-$page->index();
+//$page = new \IMooc\UserStrategyPage();
+//if (isset($_GET['strategy']) && $_GET['strategy'] == 'male') {
+//    $page->setStrategy(new \IMooc\MaleUserStrategy());
+//} else {
+//    $page->setStrategy(new \IMooc\FemaleUserStrategy());
+//}
+//$page->index();
 //策略模式，所谓策略模式就是根据不同的环境以有不同的响应策略
+//$mysql = new \IMooc\Database\MySQLii();
+//$mysql->connect('172.19.0.1', 'default', 'secret', 'default');
+//$users = $mysql->query("select * from user");
+//var_dump($users);
+//ORM对象数据映射
+$userModel = new \IMooc\Database\User(1);
+var_dump($userModel->name);
+
+
