@@ -31,8 +31,12 @@ spl_autoload_register('\IMooc\Loader::autoload');
 //$users = $mysql->query("select * from user");
 //var_dump($users);
 //ORM对象数据映射
-$userModel = new \IMooc\Database\User(1);
-$userModel->mobile = '17091642340';
-var_dump($userModel->save());
+//$userModel = new \IMooc\Database\User(1);
+//$userModel->mobile = '17091642340';
+//var_dump($userModel->save());
+//结合工厂，注册树模式的ORM
+$user = \IMooc\Factory::createUserModel(1);
+$user2 = \IMooc\Factory::createUserModel(1);
+//$user与$user2为同一个对象
 
 

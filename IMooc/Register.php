@@ -17,12 +17,12 @@ class Register
         return self::$objects[$alias];
     }
 
-    public function _set($alias, $object)
+    public static function _set($alias, $object)
     {
         self::$objects[$alias] = $object;
     }
 
-    public function _unset($alias)
+    public static function _unset($alias)
     {
         unset(self::$objects[$alias]);
     }

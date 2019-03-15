@@ -8,11 +8,24 @@
 
 namespace IMooc;
 
+use IMooc\Database\User;
+
 class Factory
 {
     public static function createDatabase()
     {
         $db = new Database;
         return $db;
+    }
+
+    public static function createUserModel($id)
+    {
+        $key = 'user' . $id;
+        $user = Register::get($key);
+        if (!$user) {
+            $user = new User($id);
+            Register::_set($key, $user);
+        }
+        return $user;
     }
 }
