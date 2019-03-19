@@ -38,5 +38,8 @@ spl_autoload_register('\IMooc\Loader::autoload');
 $user = \IMooc\Factory::createUserModel(1);
 $user2 = \IMooc\Factory::createUserModel(1);
 //$user与$user2为同一个对象
-
+$event = new \IMooc\Observer\Event();
+$event->addObserver(new \IMooc\Observer\ObserverEmail());
+$event->addObserver(new \IMooc\Observer\ObserverSMS());
+$event->trigger();
 
