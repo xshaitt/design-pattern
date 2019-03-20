@@ -22,7 +22,7 @@ abstract class EventGenerator
         $this->observers[] = $observer;
     }
 
-    private function notify()
+    protected function notify()
     {
         foreach ($this->observers as $observer) {
             $observer->update();
