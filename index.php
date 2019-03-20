@@ -35,11 +35,16 @@ spl_autoload_register('\IMooc\Loader::autoload');
 //$userModel->mobile = '17091642340';
 //var_dump($userModel->save());
 //结合工厂，注册树模式的ORM
-$user = \IMooc\Factory::createUserModel(1);
-$user2 = \IMooc\Factory::createUserModel(1);
+//$user = \IMooc\Factory::createUserModel(1);
+//$user2 = \IMooc\Factory::createUserModel(1);
 //$user与$user2为同一个对象
-$event = new \IMooc\Observer\Event();
-$event->addObserver(new \IMooc\Observer\ObserverEmail());
-$event->addObserver(new \IMooc\Observer\ObserverSMS());
-$event->trigger();
+//$event = new \IMooc\Observer\Event();
+//$event->addObserver(new \IMooc\Observer\ObserverEmail());
+//$event->addObserver(new \IMooc\Observer\ObserverSMS());
+//$event->trigger();
+//迭代器模式
+$users = new \IMooc\Iterator\AllUser();
+foreach ($users as $user) {
+    echo "{$user->name}</br>";
+}
 

@@ -22,7 +22,7 @@ class MySQLii implements IDatabase
     public function query($sql)
     {
         $obj = mysqli_query($this->conn, $sql);
-        return mysqli_fetch_assoc($obj);
+        return mysqli_fetch_all($obj, MYSQLI_ASSOC);
     }
 
     public function update($sql)

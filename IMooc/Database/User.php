@@ -16,10 +16,11 @@ class User
     {
         $this->db = new MySQLii();
         $this->db->connect('172.19.0.1', 'default', 'secret', 'default');
-        $user = $this->db->query("select * from user where id ='{$id}'");
-        if (!$user) {
+        $result = $this->db->query("select * from user where id ='{$id}'");
+        if (!$result) {
             return null;
         }
+        $user = $result[0];
         $this->id = $id;
         $this->name = $user['name'];
         $this->mobile = $user['mobile'];
