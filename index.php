@@ -43,8 +43,12 @@ spl_autoload_register('\IMooc\Loader::autoload');
 //$event->addObserver(new \IMooc\Observer\ObserverSMS());
 //$event->trigger();
 //迭代器模式
-$users = new \IMooc\Iterator\AllUser();
-foreach ($users as $user) {
-    echo "{$user->name}</br>";
-}
-
+//$users = new \IMooc\Iterator\AllUser();
+//foreach ($users as $user) {
+//    echo "{$user->name}</br>";
+//}
+//装饰器模式
+$rect = new \IMooc\Decorator\Rect();
+$rect->addDrawDecorator(new \IMooc\Decorator\ColorDrawDecorator('#aaaaaa'));
+$rect->addDrawDecorator(new \IMooc\Decorator\SizeDrawDecorator('10'));
+$rect->draw();
